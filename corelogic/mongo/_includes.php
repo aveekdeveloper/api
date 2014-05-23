@@ -1,11 +1,29 @@
 <?php
 
+//This is the memcache stub , which can be used in localhost for dvelopment purposes
+class MemcacheStub
+{
+//getter
+funtion get($var)
+{
+	//Always return false
+	return false;
+}
+
+//setter
+function set($var)
+{
+	//Do nothing
+}
+
+}
 
 // MongoDB
 try{
 	if($global_app_mode === 'DEVELOPMENT')
 	{
 		$connection = new MongoClient($global_mongo_url);
+		$memcache = new MemcacheStub;
 	}else
 	{
 		$connection = new Mongo($global_mongo_url);
