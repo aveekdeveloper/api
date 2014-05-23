@@ -9,6 +9,9 @@ try{
 	}else
 	{
 		$connection = new Mongo($global_mongo_url);
+		//try connecting to Memcache
+		$memcache = new Memcache;
+		$memcache->connect($global_memcache_url, 11211) or die ("Could not connect to memcache");
 	}
 	
 }catch(MongoException $e)
@@ -19,11 +22,6 @@ try{
   error_log( "Could not connect to database" );
   exit;
 }
-
-//try connecting to Memcache
-$memcache = new Memcache;
-$memcache->connect($global_memcache_url, 11211) or die ("Could not connect to memcache");
-
 
 $db = $connection->$global_dbname; 
 
