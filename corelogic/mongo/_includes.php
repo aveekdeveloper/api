@@ -3,18 +3,18 @@
 //This is the memcache stub , which can be used in localhost for dvelopment purposes
 class MemcacheStub
 {
-//getter
-funtion get($var)
-{
-	//Always return false
-	return false;
-}
-
-//setter
-function set($var)
-{
-	//Do nothing
-}
+	//getter
+	funtion get($var)
+	{
+		//Always return false
+		return false;
+	}
+	
+	//setter
+	function set( $var, $result, $flag, $time)
+	{
+		//Do nothing
+	}
 
 }
 
